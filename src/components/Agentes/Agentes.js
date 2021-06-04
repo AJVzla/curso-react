@@ -18,8 +18,8 @@ const Agentes = () => {
 		habilidades1: data.data[0].abilities[1].displayIcon,
 		habilidades2: data.data[0].abilities[2].displayIcon,
 		habilidades3: data.data[0].abilities[3].displayIcon,
-
-		raze: data.data[1].displayName,
+	
+			raze: data.data[1].displayName,
 		raze1: data.data[1].description,
 		raze2: data.data[1].fullPortrait,
 		razerole: data.data[1].role.displayIcon,
@@ -28,7 +28,7 @@ const Agentes = () => {
 		habilidadesraze2: data.data[1].abilities[2].displayIcon,
 		habilidadesraze3: data.data[1].abilities[3].displayIcon,
 
-		skye: data.data[2].displayName,
+			skye: data.data[2].displayName,
 		skye1: data.data[2].description,
 		skye2: data.data[2].fullPortrait,
 		skyerole: data.data[2].role.displayIcon,
@@ -37,7 +37,7 @@ const Agentes = () => {
 		habilidadesskye2: data.data[2].abilities[2].displayIcon,
 		habilidadesskye3: data.data[2].abilities[3].displayIcon,
 
-		cypher: data.data[3].displayName,
+			cypher: data.data[3].displayName,
 		cypher1: data.data[3].description,
 		cypher2: data.data[3].fullPortrait,
 		cypherrole: data.data[3].role.displayIcon,
@@ -46,7 +46,7 @@ const Agentes = () => {
 		habilidadescypher2: data.data[3].abilities[2].displayIcon,
 		habilidadescypher3: data.data[3].abilities[3].displayIcon,
 
-		sova: data.data[5].displayName,
+			sova: data.data[5].displayName,
 		sova1: data.data[5].description,
 		sova2: data.data[5].fullPortrait,
 		sovarole: data.data[5].role.displayIcon,
@@ -55,7 +55,7 @@ const Agentes = () => {
 		habilidadessova2: data.data[5].abilities[2].displayIcon,
 		habilidadessova3: data.data[5].abilities[3].displayIcon,
 
-		killjoy: data.data[6].displayName,
+			killjoy: data.data[6].displayName,
 		killjoy1: data.data[6].description,
 		killjoy2: data.data[6].fullPortrait,
 		killjoyrole: data.data[6].role.displayIcon,
@@ -63,13 +63,18 @@ const Agentes = () => {
 		habilidadeskilljoy1: data.data[6].abilities[1].displayIcon,
 		habilidadeskilljoy2: data.data[6].abilities[2].displayIcon,
 		habilidadeskilljoy3: data.data[6].abilities[3].displayIcon,
+
 		};
 
 		setUser(userData);
+		
 	});
 	}, []);
 	return(
+		<>
+		<h3 className="title">Agents</h3>
 		<div className="container">
+			
 			{user ?(
 				<div className="box" >
 					<h3>{user.breach} <img src={user.breachrole} alt="" /></h3>
@@ -187,6 +192,7 @@ const Agentes = () => {
 				</div>
 			) : null}
 		</div>
+		</>
 	);
 }
 export default Agentes;

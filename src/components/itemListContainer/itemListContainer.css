@@ -1,0 +1,100 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+.imagen{
+  max-width: 400px;
+  width: 100%;
+}
+.title{
+	font-size: 40px;
+	color: #fff;
+	padding: 60px 0;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.container{
+	display: flex;
+	width: 100%;
+	max-width: 1170px;
+	padding: 0 15px 30px 15px;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+}
+.container .box{
+	width: 30%;
+	padding: 20px;
+	/*border: 1px dashed #fff;*/
+	margin: 10px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 10px;
+	transition: all .35s ease-in-out;
+	box-shadow: 8px 8px 20px 0 rgb(0 0 0 / 32%);
+	background: #111723;
+}
+.container .item{
+	align-items: center;
+	justify-content: space-between;
+}
+.container .item img {
+	padding-top: 40px;
+}
+.container .item .video {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.container .item .video html body video{
+	margin: 0;
+}
+@media (max-width: 800px) {
+  .container .box {
+    width: 100%;
+  }
+}
+.container .box:hover{
+	background: #111723;
+	box-shadow: 8px 8px 24px 0 rgb(0 0 0 / 12%);
+}
+.container .box h3{
+	font-size: 20px;
+}
+.container .box h3 button{
+	padding: 2px 15px;
+	margin-left: 10px;
+}
+.container .box h3 img{
+	width: 30px;
+	padding-left: 10px;
+}
+.container .box p{
+	font-size: 14px;
+}
+
+.container .box .habilidades{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: 20px;
+}
+.container .box .habilidades img{
+	width: 15%;
+}
+.modal-dialog{
+	border: 0;
+}
+.modal-dialog .modal-content .modal-header{
+	background: #FF4654;
+	border: 0;
+}
+.modal-dialog .modal-content .modal-header button{
+	color: #fff;
+}
+.modal-dialog .modal-content .modal-body{
+	background: #000;
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './styles.css';
 import { elastic as Menu } from 'react-burger-menu'
 
@@ -11,7 +10,9 @@ class Elastic extends React.Component {
   render () {
     // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
     return (
+
       <Menu>
+
        <ul>
 			<li>
 				<a href="#">Agents</a>
@@ -21,7 +22,7 @@ class Elastic extends React.Component {
 			</li>	
 			<li>
 				<a href="#">Support</a>
-			</li>	
+			</li>		
 			<li>
 				<a
 				className="App-link bottom-home"

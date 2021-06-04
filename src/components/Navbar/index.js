@@ -1,11 +1,10 @@
 import React from 'react';
 import valorant from '../../valorant-header.svg';
+import Cartwidget from '../../components/CartWidget/index';
+import './Navbar.sass';
 
 
-import './styles.css';
-
-
-const Navbar = props => (
+const Navbar = () => (
   <React.Fragment>
   <header className="cabecera">
   		<div className="cont-1300">
@@ -18,10 +17,7 @@ const Navbar = props => (
   					<a href="#">Weapons Skins</a>
   				</li>	
   				<li>
-  					<a href="#">Support</a>
-  				</li>	
-  				<li>
-  					<a href="#"><i class="far fa-shopping-cart"></i></a>
+            < Cartwidget />
   				</li>	
           <li>
              <a
