@@ -12,7 +12,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
   const lessCount = () => {
     count > initial ? setCount(count-1) : setCount(initial)
   }
-  console.log(initial)
+
 
   return(
     <>
@@ -23,7 +23,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
           <input type="text" id="number" value={count}/>
           <div className="value-button" id="increase" onClick={addCount} value="Increase Value"><i class="fas fa-plus-circle"></i></div>
         </div>
-        <Button variant="light" className="add">Add Cart</Button>
+        <Button variant="light" className="add" onClick={() => onAdd(count)} >Add Cart</Button>
       </div>
     </>
 

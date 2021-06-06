@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import './Carousele.sass';
 import Carousel from 'react-bootstrap/Carousel'
-
+import Spinner from 'react-bootstrap/Spinner'
 
 const Carousele = () => {
  const [user, setUser] = useState(null);
-
+ const [loading, setloading] = useState(true);
   useEffect(() => {
   fetch("https://valorant-api.com/v1/bundles")
   .then((res) => res.json())
@@ -29,10 +29,17 @@ const Carousele = () => {
     };
 
     setUser(userData);
+    setloading(false);
   });
   }, []);
   return(
 
+      <>
+          {loading ? (
+          <Spinner animation="border" role="status">
+            <span className="sr-only"></span>
+          </Spinner>
+          ) : null}
         <Carousel fade>
           {user ?(
               <Carousel.Item>
@@ -107,6 +114,7 @@ const Carousele = () => {
               </Carousel.Item>
             ) : null}
         </Carousel>
+      </>
 
 
   );

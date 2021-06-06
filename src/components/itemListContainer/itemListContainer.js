@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './itemListContainer.sass';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import swal from 'sweetalert';
 import ItemCount from '../../components/ItemCount/ItemCount';
 import Spinner from 'react-bootstrap/Spinner'
 const ItemListContainer = () => {
@@ -15,6 +16,7 @@ const ItemListContainer = () => {
  	const [lgShow6, setLgShow6] = useState(false);
  	const [lgShow7, setLgShow7] = useState(false);
  	const onAdd = (amount) => {
+ 		swal("Great!",`You send ${amount} items to your cart`, "success");
  	}
  	const [loading, setloading] = useState(true);
  	useEffect(() => {
@@ -93,7 +95,7 @@ const ItemListContainer = () => {
 							 </iframe>
 				        </Modal.Body>
 				      </Modal>
-				     <ItemCount initial={1} stock={5} funcion={onAdd} />
+				     <ItemCount initial={1} stock={5} onAdd={onAdd} />
 				</div>	
 			) : null}
 			{user ?(
@@ -114,7 +116,7 @@ const ItemListContainer = () => {
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				     <ItemCount initial={1} stock={5} funcion={onAdd} />
+				     <ItemCount initial={1} stock={5} onAdd={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -135,7 +137,7 @@ const ItemListContainer = () => {
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				      <ItemCount initial={1} stock={5} funcion={onAdd} />
+				      <ItemCount initial={1} stock={5} onAdd={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -156,7 +158,7 @@ const ItemListContainer = () => {
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				      <ItemCount initial={1} stock={5} funcion={onAdd} />
+				      <ItemCount initial={1} stock={5} onAdd={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -177,7 +179,7 @@ const ItemListContainer = () => {
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				      <ItemCount initial={1} stock={5} funcion={onAdd} />
+				      <ItemCount initial={1} stock={5} onAdd={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -198,7 +200,7 @@ const ItemListContainer = () => {
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				      <ItemCount initial={1} stock={5} funcion={onAdd} />
+				      <ItemCount initial={1} stock={5} onAdd={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -219,7 +221,7 @@ const ItemListContainer = () => {
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				      <ItemCount initial={1} stock={5} funcion={onAdd} />
+				      <ItemCount initial={1} stock={5} onAdd={onAdd} />
 				</div>
 			) : null}
 
@@ -241,7 +243,7 @@ const ItemListContainer = () => {
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				      <ItemCount initial={1} stock={5} funcion={onAdd} />
+				      <ItemCount initial={1} stock={5} onAdd={onAdd} />
 				</div>
 			) : null}
 
@@ -251,7 +253,7 @@ const ItemListContainer = () => {
 					<img src={user.wepy8} 
 					className="imagen"
 					alt="" />
-					<ItemCount initial={1} stock={5} funcion={onAdd} />
+					<ItemCount initial={1} stock={5} onAdd={onAdd} />
 				</div>
 			) : null}
 			
