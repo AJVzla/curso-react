@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Cartwidget.sass';
+import './CartWidget.sass';
 
 
 const Cartwidget = () => (

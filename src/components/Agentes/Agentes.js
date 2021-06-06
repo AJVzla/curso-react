@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './Agentes.css';
+import './Agentes.sass';
 
 const Agentes = () => {
 	const [user, setUser] = useState(null);

@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import './itemListContainer.css';
+import './itemListContainer.sass';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import ItemCount from '../../components/ItemCount/index';
+import ItemCount from '../../components/ItemCount/ItemCount';
+import Spinner from 'react-bootstrap/Spinner'
 const ItemListContainer = () => {
 	const [user, setUser] = useState(null);
  	const [lgShow, setLgShow] = useState(false);
@@ -13,7 +14,9 @@ const ItemListContainer = () => {
  	const [lgShow5, setLgShow5] = useState(false);
  	const [lgShow6, setLgShow6] = useState(false);
  	const [lgShow7, setLgShow7] = useState(false);
-
+ 	const onAdd = (amount) => {
+ 	}
+ 	const [loading, setloading] = useState(true);
  	useEffect(() => {
 	fetch("https://valorant-api.com/v1/weapons/skins")
 	.then((res) => res.json())
@@ -59,11 +62,17 @@ const ItemListContainer = () => {
 		
 		};
 		setUser(userData);
+		setloading(false);
 	});
 	}, []);
 	return(
 		<>
 		<h3 className="title">Weapons Skins</h3>
+			{loading ? (
+			<Spinner animation="border" role="status">
+			  <span className="sr-only"></span>
+			</Spinner>
+			) : null}
 		<div className="container">
 			{user ?(
 				<div className="box item" >
@@ -76,7 +85,7 @@ const ItemListContainer = () => {
 				        show={lgShow}
 				        onHide={() => setLgShow(false)}
 				        aria-labelledby="example-modal-sizes-title-lg">
-				        <Modal.Header closeButton></Modal.Header>
+				        <Modal.Header closeButton><h5>{user.wep}</h5></Modal.Header>
 				        <Modal.Body>
 				        	<iframe className="video" width="100%" height="400" src={user.wepyv} 
 							title="Video Player" frameborder="0"
@@ -84,7 +93,7 @@ const ItemListContainer = () => {
 							 </iframe>
 				        </Modal.Body>
 				      </Modal>
-				     <ItemCount />
+				     <ItemCount initial={1} stock={5} funcion={onAdd} />
 				</div>	
 			) : null}
 			{user ?(
@@ -98,14 +107,14 @@ const ItemListContainer = () => {
 				        show={lgShow1}
 				        onHide={() => setLgShow1(false)}
 				        aria-labelledby="example-modal-sizes-title-lg" >
-				        <Modal.Header closeButton></Modal.Header>
+				        <Modal.Header closeButton><h5>{user.wep1}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv1} 
 							title="Video Player" frameborder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				      <ItemCount />
+				     <ItemCount initial={1} stock={5} funcion={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -119,14 +128,14 @@ const ItemListContainer = () => {
 				        show={lgShow2}
 				        onHide={() => setLgShow2(false)}
 				        aria-labelledby="example-modal-sizes-title-lg" >
-				        <Modal.Header closeButton></Modal.Header>
+				        <Modal.Header closeButton> <h5>{user.wep2}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv2} 
 							title="Video Player" frameborder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				       <ItemCount />
+				      <ItemCount initial={1} stock={5} funcion={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -140,14 +149,14 @@ const ItemListContainer = () => {
 				        show={lgShow3}
 				        onHide={() => setLgShow3(false)}
 				        aria-labelledby="example-modal-sizes-title-lg" >
-				        <Modal.Header closeButton></Modal.Header>
+				        <Modal.Header closeButton> <h5>{user.wep3}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv3} 
 							title="Video Player" frameborder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				       <ItemCount />
+				      <ItemCount initial={1} stock={5} funcion={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -161,14 +170,14 @@ const ItemListContainer = () => {
 				        show={lgShow4}
 				        onHide={() => setLgShow4(false)}
 				        aria-labelledby="example-modal-sizes-title-lg">
-				        <Modal.Header closeButton></Modal.Header>
+				        <Modal.Header closeButton><h5>{user.wep9}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv9} 
 							title="Video Player" frameborder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				       <ItemCount />
+				      <ItemCount initial={1} stock={5} funcion={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -182,14 +191,14 @@ const ItemListContainer = () => {
 				        show={lgShow5}
 				        onHide={() => setLgShow5(false)}
 				        aria-labelledby="example-modal-sizes-title-lg">
-				        <Modal.Header closeButton></Modal.Header>
+				        <Modal.Header closeButton><h5>{user.wep6}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv6} 
 							title="Video Player" frameborder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				       <ItemCount />
+				      <ItemCount initial={1} stock={5} funcion={onAdd} />
 				</div>
 			) : null}
 			{user ?(
@@ -203,14 +212,14 @@ const ItemListContainer = () => {
 				        show={lgShow6}
 				        onHide={() => setLgShow6(false)}
 				        aria-labelledby="example-modal-sizes-title-lg">
-				        <Modal.Header closeButton></Modal.Header>
+				        <Modal.Header closeButton><h5>{user.wep4}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv4} 
 							title="Video Player" frameborder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				       <ItemCount />
+				      <ItemCount initial={1} stock={5} funcion={onAdd} />
 				</div>
 			) : null}
 
@@ -225,14 +234,14 @@ const ItemListContainer = () => {
 				        show={lgShow7}
 				        onHide={() => setLgShow7(false)}
 				        aria-labelledby="example-modal-sizes-title-lg">
-				        <Modal.Header closeButton></Modal.Header>
+				        <Modal.Header closeButton><h5>{user.wep5}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv5} 
 							title="Video Player" frameborder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
-				       <ItemCount />
+				      <ItemCount initial={1} stock={5} funcion={onAdd} />
 				</div>
 			) : null}
 
@@ -242,7 +251,7 @@ const ItemListContainer = () => {
 					<img src={user.wepy8} 
 					className="imagen"
 					alt="" />
-					 <ItemCount />
+					<ItemCount initial={1} stock={5} funcion={onAdd} />
 				</div>
 			) : null}
 			

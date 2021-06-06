@@ -1,8 +1,8 @@
 import './App.css';
 import Agentes from './components/Agentes/Agentes';
-import Elastic from './components/Elastic/index';
-import Navbar from './components/Navbar/index';
-import Carousele from './components/Carousele/index';
+import Elastic from './components/Elastic/Elastic';
+import Navbar from './components/Navbar/Navbar';
+import Carousele from './components/Carousele/Carousele';
 import ItemListContainer from './components/itemListContainer/itemListContainer';
 
 function App() {

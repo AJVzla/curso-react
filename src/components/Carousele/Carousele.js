@@ -33,7 +33,7 @@ const Carousele = () => {
   }, []);
   return(
 
-        <Carousel>
+        <Carousel fade>
           {user ?(
               <Carousel.Item>
                 <img

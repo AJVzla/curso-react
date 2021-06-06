@@ -1,6 +1,6 @@
 import React from 'react';
 import valorant from '../../valorant-header.svg';
-import Cartwidget from '../../components/CartWidget/index';
+import Cartwidget from '../../components/CartWidget/CartWidget';
 import './Navbar.sass';
 
 

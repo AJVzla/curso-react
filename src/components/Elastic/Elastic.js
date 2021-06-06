@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './Elastic.sass';
 import { elastic as Menu } from 'react-burger-menu'
 
 class Elastic extends React.Component {
