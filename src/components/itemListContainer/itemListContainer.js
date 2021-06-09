@@ -23,7 +23,6 @@ const ItemListContainer = () => {
 	fetch("https://valorant-api.com/v1/weapons/skins")
 	.then((res) => res.json())
 	.then((data) => {
-		console.log(data);
 		const userData = {
 			
 		wep: data.data[0].displayName,
@@ -34,33 +33,33 @@ const ItemListContainer = () => {
 		wepy1: data.data[24].displayIcon,
 		wepyv1: data.data[24].levels[3].streamedVideo,
 
-		wep2: data.data[58].displayName,
-		wepy2: data.data[58].displayIcon,
-		wepyv2: data.data[58].levels[3].streamedVideo,
+		wep2: data.data[59].displayName,
+		wepy2: data.data[59].displayIcon,
+		wepyv2: data.data[59].levels[3].streamedVideo,
 
-		wep3: data.data[79].displayName,
-		wepy3: data.data[79].displayIcon,
-		wepyv3: data.data[79].levels[3].streamedVideo,
+		wep3: data.data[80].displayName,
+		wepy3: data.data[80].displayIcon,
+		wepyv3: data.data[80].levels[3].streamedVideo,
 
-		wep4: data.data[109].displayName,
-		wepy4: data.data[109].displayIcon,
-		wepyv4: data.data[109].levels[3].streamedVideo,
+		wep4: data.data[111].displayName,
+		wepy4: data.data[111].displayIcon,
+		wepyv4: data.data[111].levels[3].streamedVideo,
 
 		wep5: data.data[124].displayName,
 		wepy5: data.data[124].displayIcon,
 		wepyv5: data.data[124].levels[3].streamedVideo,
 
-		wep6: data.data[189].displayName,
-		wepy6: data.data[189].displayIcon,
-		wepyv6: data.data[189].levels[3].streamedVideo,
+		wep6: data.data[191].displayName,
+		wepy6: data.data[191].displayIcon,
+		wepyv6: data.data[191].levels[3].streamedVideo,
 
 
 		wep8: data.data[270].displayName,
 		wepy8: data.data[270].displayIcon,
 
-		wep9: data.data[47].displayName,
-		wepy9: data.data[47].displayIcon,
-		wepyv9: data.data[47].levels[3].streamedVideo,
+		wep9: data.data[48].displayName,
+		wepy9: data.data[48].displayIcon,
+		wepyv9: data.data[48].levels[3].streamedVideo,
 		
 		};
 		setUser(userData);
@@ -71,7 +70,7 @@ const ItemListContainer = () => {
 		<>
 		<h3 className="title">Weapons Skins</h3>
 			{loading ? (
-			<Spinner animation="border" role="status">
+			<Spinner animation="grow"  variant="dark" role="status">
 			  <span className="sr-only"></span>
 			</Spinner>
 			) : null}
@@ -90,7 +89,7 @@ const ItemListContainer = () => {
 				        <Modal.Header closeButton><h5>{user.wep}</h5></Modal.Header>
 				        <Modal.Body>
 				        	<iframe className="video" width="100%" height="400" src={user.wepyv} 
-							title="Video Player" frameborder="0"
+							title="Video Player" frameBorder="0"
 							 allow="accelerometer; autoplay;" >
 							 </iframe>
 				        </Modal.Body>
@@ -112,7 +111,7 @@ const ItemListContainer = () => {
 				        <Modal.Header closeButton><h5>{user.wep1}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv1} 
-							title="Video Player" frameborder="0"
+							title="Video Player" frameBorder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
@@ -133,7 +132,7 @@ const ItemListContainer = () => {
 				        <Modal.Header closeButton> <h5>{user.wep2}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv2} 
-							title="Video Player" frameborder="0"
+							title="Video Player" frameBorder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
@@ -154,7 +153,7 @@ const ItemListContainer = () => {
 				        <Modal.Header closeButton> <h5>{user.wep3}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv3} 
-							title="Video Player" frameborder="0"
+							title="Video Player" frameBorder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
@@ -175,7 +174,7 @@ const ItemListContainer = () => {
 				        <Modal.Header closeButton><h5>{user.wep9}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv9} 
-							title="Video Player" frameborder="0"
+							title="Video Player" frameBorder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
@@ -196,7 +195,7 @@ const ItemListContainer = () => {
 				        <Modal.Header closeButton><h5>{user.wep6}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv6} 
-							title="Video Player" frameborder="0"
+							title="Video Player" frameBorder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
@@ -217,7 +216,7 @@ const ItemListContainer = () => {
 				        <Modal.Header closeButton><h5>{user.wep4}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv4} 
-							title="Video Player" frameborder="0"
+							title="Video Player" frameBorder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>
@@ -239,7 +238,7 @@ const ItemListContainer = () => {
 				        <Modal.Header closeButton><h5>{user.wep5}</h5></Modal.Header>
 				        <Modal.Body>
 							<iframe className="video" width="100%" height="400" src={user.wepyv5} 
-							title="Video Player" frameborder="0"
+							title="Video Player" frameBorder="0"
 							 allow="accelerometer; autoplay;" ></iframe>
 				        </Modal.Body>
 				      </Modal>

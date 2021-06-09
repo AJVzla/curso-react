@@ -12,7 +12,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
   const lessCount = () => {
     count > initial ? setCount(count-1) : setCount(initial)
   }
-
+  
 
   return(
     <>
