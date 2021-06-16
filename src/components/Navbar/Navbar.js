@@ -2,24 +2,24 @@ import React from 'react';
 import valorant from '../../valorant-header.svg';
 import Cartwidget from '../../components/CartWidget/CartWidget';
 import './Navbar.sass';
-
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
   <React.Fragment>
   <header className="cabecera">
   		<div className="cont-1300">
   		<a href=""><img src={valorant} className="logo" alt="Valorant Gamers" /></a>
-  			<ul className="lista">
-  				<li className="iten">
-  					<a href="#">Agents</a>
-  				</li>	
-  				<li className="iten">
-  					<a href="#">Weapons Skins</a>
-  				</li>	
-  				<li className="iten">
-            < Cartwidget />
-  				</li>	
-          <li className="iten">
+  			<div className="lista">
+           <NavLink activeClassName="selected" to={'/Agentes'}>
+            Agents
+          </NavLink>
+          <NavLink activeClassName="selected" exact to={'/'}>
+             Weapons Skins
+          </NavLink>
+  				<NavLink activeClassName="selected" to={'/detail/1'}>
+             < Cartwidget />
+          </NavLink>
+  				<NavLink activeClassName="selected" to={'/detail/1'}>
              <a
             className="App-link bottom-home"
             href="https://playvalorant.com/es-mx/"
@@ -27,8 +27,9 @@ const Navbar = () => (
             rel="noopener noreferrer">
             <span className="bot">PLAY </span>
           </a>
-          </li>
-  			</ul>	
+          </NavLink>
+         
+  			</div>	
   		</div>	
   </header>
 

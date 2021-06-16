@@ -6,11 +6,10 @@ import Modal from 'react-bootstrap/Modal'
 
 const Modals = ({video, title}) => {
   const [lgShow, setLgShow] = useState(false);
-  
 
   return(
     <>
-    <Button variant="light" onClick={() => setLgShow(true)}>Demo</Button>
+    {video ? ( <> <Button variant="light" onClick={() => setLgShow(true)}>Demo</Button>
       <Modal size="lg" show={lgShow} onHide={() => setLgShow(false)}
           aria-labelledby="example-modal-sizes-title-lg">
           <Modal.Header closeButton><h5>{title}</h5></Modal.Header>
@@ -20,7 +19,8 @@ const Modals = ({video, title}) => {
          allow="accelerometer; autoplay;" >
          </iframe>
           </Modal.Body>
-        </Modal>
+        </Modal>  </>) : null}
+   
     </>
 
 
