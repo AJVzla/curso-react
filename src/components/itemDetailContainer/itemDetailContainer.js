@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import './itemListContainer.sass';
+import './itemDetailContainer.sass';
 import swal from 'sweetalert';
 import Spinner from 'react-bootstrap/Spinner'
-import ItemList from '../../components/ItemList/ItemList';
-import ItemDetailContainer from '../../components/itemDetailContainer/itemDetailContainer';
-const ItemListContainer = () => {
-const [user, setUser] = useState(null);
+import ItemDetail from '../../components/ItemDetail/ItemDetail';
+import Item from '../../components/Item/Item';
+const ItemDetailContainer = () => {
+const [getItems, setgetItems] = useState(null);
 const [loading, setLoading] = useState(false);
 useEffect(() => {
 setLoading(true);
 fetch("https://valorant-api.com/v1/weapons/skins")
 .then((res) => res.json())
 .then((data) => {
-	const userData = [
+	const getItemsData = [
 	{
 	id: '1',
 	price: '100',
@@ -57,7 +57,7 @@ fetch("https://valorant-api.com/v1/weapons/skins")
 	},
 
 	];
-   setUser(userData);
+   setgetItems(getItemsData);
    console.log(data);
   })
   .catch((err) => {
@@ -69,19 +69,14 @@ fetch("https://valorant-api.com/v1/weapons/skins")
   }, []);
 return(
 	<>
-	<h3 className="title">Weapons Skins</h3>
-	{loading ? (
-	      <Spinner animation="grow"  variant="dark" role="status">
-	        <span className="sr-only"></span>
-	      </Spinner>
-	      ) : null}
+	{getItems ? (
+		<>
 	<div className="container">
-		< ItemList user={user} />
+		< ItemDetail getItems={getItems}  />
 	</div>
-	<div className="container">
-		< ItemDetailContainer  />
-	</div>
+	</>
+	) : null}
 	</>
 );
 }
-export default ItemListContainer;
+export default ItemDetailContainer;

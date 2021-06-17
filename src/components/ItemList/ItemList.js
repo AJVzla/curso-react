@@ -3,10 +3,21 @@ import './ItemList.sass';
 import Spinner from 'react-bootstrap/Spinner'
 import swal from 'sweetalert';
 import Item from '../../components/Item/Item';
-const ItemList = ({id, title, price, pictureUrl, video}) => {
+const ItemList = ({user}) => {
+
 	return(
-		<>			
-		< Item id={id}  title={title}  price={price} pictureUrl={pictureUrl} video={video} />		
+		<>
+			{user ? (
+				<>
+					{user.map((element, i) => {
+            			return (
+    				<>
+    				< Item id={element.id}  title={element.title}  price={element.price} pictureUrl={element.pictureUrl} video={element.video} />
+				      </>
+				      );
+         			 })}
+				</>
+			) : null}
 		</>
 	);
 }
