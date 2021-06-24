@@ -14,47 +14,14 @@ fetch("https://valorant-api.com/v1/weapons/skins")
 .then((data) => {
 	const getItemsData = [
 	{
-	id: '1',
+	id: data.data[62].uuid,
 	price: '100',
-	title: data.data[32].displayName,
-	pictureUrl: data.data[32].displayIcon,
-	video: data.data[32].levels[3].streamedVideo,
+	title: data.data[62].displayName,
+	pictureUrl: data.data[62].displayIcon,
+	video: data.data[62].levels[3].streamedVideo,
 	},
-	{
-	id: '2',
-	price: '200',
-	title: data.data[24].displayName,
-	pictureUrl: data.data[24].displayIcon,
-	video: data.data[24].levels[3].streamedVideo,
-	},
-	{
-	id: '3',
-	price: '300',
-	title: data.data[26].displayName,
-	pictureUrl: data.data[26].displayIcon,
-	video: data.data[26].levels[3].streamedVideo,
-	},
-	{
-	id: '4',
-	price: '400',
-	title: data.data[28].displayName,
-	pictureUrl: data.data[28].displayIcon,
-	video: data.data[28].levels[3].streamedVideo,
-	},
-	{
-	id: '5',
-	price: '500',
-	title: data.data[39].displayName,
-	pictureUrl: data.data[39].displayIcon,
-	video: data.data[39].levels[3].streamedVideo,
-	},
-	{
-	id: '6',
-	price: '600',
-	title: data.data[48].displayName,
-	pictureUrl: data.data[48].displayIcon,
-	video: data.data[48].levels[3].streamedVideo,
-	},
+	
+	
 
 	];
    setgetItems(getItemsData);

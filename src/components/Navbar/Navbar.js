@@ -8,7 +8,7 @@ const Navbar = () => (
   <React.Fragment>
   <header className="cabecera">
   		<div className="cont-1300">
-  		<a href=""><img src={valorant} className="logo" alt="Valorant Gamers" /></a>
+  		<NavLink  to={'/'}><img src={valorant} className="logo" alt="Valorant Gamers" /></NavLink>
   			<div className="lista">
            <NavLink activeClassName="selected" to={'/Agentes'}>
             Agents

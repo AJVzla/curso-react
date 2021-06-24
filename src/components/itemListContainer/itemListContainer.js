@@ -3,7 +3,7 @@ import './itemListContainer.sass';
 import swal from 'sweetalert';
 import Spinner from 'react-bootstrap/Spinner'
 import ItemList from '../../components/ItemList/ItemList';
-import ItemDetailContainer from '../../components/itemDetailContainer/itemDetailContainer';
+import { useParams } from 'react-router-dom';
 const ItemListContainer = () => {
 const [user, setUser] = useState(null);
 const [loading, setLoading] = useState(false);
@@ -14,46 +14,46 @@ fetch("https://valorant-api.com/v1/weapons/skins")
 .then((data) => {
 	const userData = [
 	{
-	id: '1',
+	id: data.data[81].uuid,
 	price: '100',
-	title: data.data[32].displayName,
-	pictureUrl: data.data[32].displayIcon,
-	video: data.data[32].levels[3].streamedVideo,
+	title: data.data[81].displayName,
+	pictureUrl: data.data[81].displayIcon,
+	video: data.data[81].levels[3].streamedVideo,
 	},
 	{
-	id: '2',
-	price: '200',
-	title: data.data[24].displayName,
-	pictureUrl: data.data[24].displayIcon,
-	video: data.data[24].levels[3].streamedVideo,
+	id: data.data[62].uuid,
+	price: '100',
+	title: data.data[62].displayName,
+	pictureUrl: data.data[62].displayIcon,
+	video: data.data[62].levels[3].streamedVideo,
 	},
 	{
-	id: '3',
-	price: '300',
-	title: data.data[26].displayName,
-	pictureUrl: data.data[26].displayIcon,
-	video: data.data[26].levels[3].streamedVideo,
+	id: data.data[63].uuid,
+	price: '100',
+	title: data.data[63].displayName,
+	pictureUrl: data.data[63].displayIcon,
+	video: data.data[63].levels[3].streamedVideo,
 	},
 	{
-	id: '4',
-	price: '400',
-	title: data.data[28].displayName,
-	pictureUrl: data.data[28].displayIcon,
-	video: data.data[28].levels[3].streamedVideo,
+	id: data.data[77].uuid,
+	price: '100',
+	title: data.data[77].displayName,
+	pictureUrl: data.data[77].displayIcon,
+	video: data.data[77].levels[3].streamedVideo,
 	},
 	{
-	id: '5',
-	price: '500',
-	title: data.data[39].displayName,
-	pictureUrl: data.data[39].displayIcon,
-	video: data.data[39].levels[3].streamedVideo,
+	id: data.data[65].uuid,
+	price: '100',
+	title: data.data[65].displayName,
+	pictureUrl: data.data[65].displayIcon,
+	video: data.data[65].levels[3].streamedVideo,
 	},
 	{
-	id: '6',
-	price: '600',
-	title: data.data[48].displayName,
-	pictureUrl: data.data[48].displayIcon,
-	video: data.data[48].levels[3].streamedVideo,
+	id: data.data[76].uuid,
+	price: '100',
+	title: data.data[76].displayName,
+	pictureUrl: data.data[76].displayIcon,
+	video: data.data[76].levels[3].streamedVideo,
 	},
 
 	];
@@ -61,7 +61,7 @@ fetch("https://valorant-api.com/v1/weapons/skins")
    console.log(data);
   })
   .catch((err) => {
-    swal("Houston", "we have a problem in item component", "error");
+    swal("Houston", "we have a problem in items component", "error");
   })
   .finally(() => {
     setLoading(false);
@@ -78,9 +78,7 @@ return(
 	<div className="container">
 		< ItemList user={user} />
 	</div>
-	<div className="container">
-		< ItemDetailContainer  />
-	</div>
+	
 	</>
 );
 }

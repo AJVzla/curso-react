@@ -54,17 +54,6 @@ const Agentes = () => {
 		},
 
 		{
-		name: data.data[5].displayName,
-		description: data.data[5].description,
-		foto: data.data[5].fullPortrait,
-		role: data.data[5].role.displayIcon,
-		habilidades: data.data[5].abilities[0].displayIcon,
-		habilidades1: data.data[5].abilities[1].displayIcon,
-		habilidades2: data.data[5].abilities[2].displayIcon,
-		habilidades3: data.data[5].abilities[3].displayIcon,
-		},
-
-		{
 		name: data.data[6].displayName,
 		description: data.data[6].description,
 		foto: data.data[6].fullPortrait,
@@ -73,6 +62,17 @@ const Agentes = () => {
 		habilidades1: data.data[6].abilities[1].displayIcon,
 		habilidades2: data.data[6].abilities[2].displayIcon,
 		habilidades3: data.data[6].abilities[3].displayIcon,
+		},
+
+		{
+		name: data.data[16].displayName,
+		description: data.data[16].description,
+		foto: data.data[16].fullPortrait,
+		role: data.data[16].role.displayIcon,
+		habilidades: data.data[16].abilities[0].displayIcon,
+		habilidades1: data.data[16].abilities[1].displayIcon,
+		habilidades2: data.data[16].abilities[2].displayIcon,
+		habilidades3: data.data[16].abilities[3].displayIcon,
 		},
 
 		{
@@ -176,6 +176,7 @@ const Agentes = () => {
 
 		];
 		setUser(userData);
+		console.log(data);
 	  	})
 	  .catch((err) => {
 	    swal("Houston", "we have a problem in agentes component", "error");
